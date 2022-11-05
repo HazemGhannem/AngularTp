@@ -1,0 +1,16 @@
+<p>list-product works!</p>
+<label >libelle: </label>
+<input type="text" [(ngModel)]="text" (change)="onclick()">
+{{text}}
+<br>
+ <h2>{{len}}</h2>
+<div *ngFor="let i of ListProduct  let j = index">
+    <h1>idProduct:  {{ i.idProduct}} 
+    | code: {{ i.code}}
+    | libelle:  {{ i.libelle}}
+    | prixunitaire: {{ i.prixunitaire}}
+    | tauxTva: {{ i.tauxTva}}</h1>
+    <button (click)="handle(i.libelle); selectedRow=j">submit</button>
+    <h2 [hidden]="selectedRow !== j">{{data}}</h2>
+
+</div>
